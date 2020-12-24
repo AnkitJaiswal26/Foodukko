@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RoundedUserField extends StatelessWidget {
-  const RoundedUserField({
+  String username;
+  RoundedUserField({
     Key key,
   }) : super(key: key);
 
@@ -11,6 +12,9 @@ class RoundedUserField extends StatelessWidget {
     return Container(
       width: size.width * 0.9,
       child: TextFormField(
+        onChanged: (value){
+          username = value;
+        },
         decoration: InputDecoration(
           hintText: "Enter your Username",
           hintStyle: TextStyle(fontSize: 14),

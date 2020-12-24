@@ -9,6 +9,10 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  RoundedEmailField emailInput = RoundedEmailField();
+  RoundedPasswordField passwordInput = RoundedPasswordField();
+  RoundedUserField userInput = RoundedUserField();  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,15 +24,15 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             height: 30,
           ),
-          RoundedUserField(),
+          userInput,
           SizedBox(
             height: 20,
           ),
-          RoundedEmailField(),
+          emailInput,
           SizedBox(
             height: 20,
           ),
-          RoundedPasswordField(),
+          passwordInput,
           SizedBox(
             height: 20,
           ),
@@ -39,7 +43,11 @@ class _LoginFormState extends State<LoginForm> {
               child: FlatButton(
                 color: Color(0xFFEB5222),
                 padding: EdgeInsets.symmetric(vertical: 18, horizontal: 40),
-                onPressed: () {},
+                onPressed: () {
+                  print(emailInput.email);
+                  print(passwordInput.password);
+                  print(userInput.username);
+                },
                 child: Text(
                   'Sign Up',
                   style: TextStyle(

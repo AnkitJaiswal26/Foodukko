@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class RoundedEmailField extends StatelessWidget {
-  const RoundedEmailField({
+  String email;
+  RoundedEmailField({
     Key key,
   }) : super(key: key);
 
@@ -11,6 +12,9 @@ class RoundedEmailField extends StatelessWidget {
     return Container(
       width: size.width * 0.9,
       child: TextFormField(
+        onChanged: (value) {
+          email = value;
+        },
         decoration: InputDecoration(
           hintText: "Enter your Email",
           hintStyle: TextStyle(fontSize: 14),
