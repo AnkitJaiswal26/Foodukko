@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "255080156418",
-    "project_id": "firstproject-2c876",
-    "storage_bucket": "firstproject-2c876.appspot.com"
+    "project_number": "1019931184623",
+    "project_id": "foodukko",
+    "storage_bucket": "foodukko.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:255080156418:android:38e43c6b7a2de29d11c61b",
+        "mobilesdk_app_id": "1:1019931184623:android:437532474f0c21ad89fa1a",
         "android_client_info": {
-          "package_name": "com.myownapp.FirstApp"
+          "package_name": "com.Ankit.Foodukko"
         }
       },
       "oauth_client": [
         {
-          "client_id": "255080156418-44j0frjibuml21b8ooq2tpiv5eana45j.apps.googleusercontent.com",
+          "client_id": "1019931184623-26pc2linhoj56v8ee529ru52rtcrs5n1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAu4UNFfz4TydDIHJEJuIOnjJZ_ohsoZGc"
+          "current_key": "AIzaSyCv7tjlO2mlS2ZkbjGuPRuhOlJkGwKJOeg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "255080156418-44j0frjibuml21b8ooq2tpiv5eana45j.apps.googleusercontent.com",
+              "client_id": "1019931184623-26pc2linhoj56v8ee529ru52rtcrs5n1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

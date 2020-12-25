@@ -12,6 +12,7 @@ class RoundedEmailField extends StatelessWidget {
     return Container(
       width: size.width * 0.9,
       child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
         onChanged: (value) {
           email = value;
         },

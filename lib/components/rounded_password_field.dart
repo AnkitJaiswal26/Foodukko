@@ -16,6 +16,7 @@ class RoundedPasswordField extends StatelessWidget {
         onChanged: (value){
           password = value;
         },
+        obscureText: true,
         decoration: InputDecoration(
           hintText: "Enter your Password",
           hintStyle: TextStyle(fontSize: 14),

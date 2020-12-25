@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:Foodukko/components/rounded_email_field.dart';
 import 'package:Foodukko/components/rounded_password_field.dart';
 import 'package:Foodukko/components/rounded_user_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:Foodukko/Screens/login/login_screen.dart';
 
-class LoginForm extends StatefulWidget {
+class SignUpForm extends StatefulWidget {
   @override
-  _LoginFormState createState() => _LoginFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SignUpFormState extends State<SignUpForm> {
+  final _auth = FirebaseAuth.instance;
   RoundedEmailField emailInput = RoundedEmailField();
   RoundedPasswordField passwordInput = RoundedPasswordField();
-  RoundedUserField userInput = RoundedUserField();  
+  RoundedUserField userInput = RoundedUserField();
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +26,6 @@ class _LoginFormState extends State<LoginForm> {
         children: <Widget>[
           SizedBox(
             height: 30,
-          ),
-          userInput,
-          SizedBox(
-            height: 20,
           ),
           emailInput,
           SizedBox(
@@ -43,10 +42,28 @@ class _LoginFormState extends State<LoginForm> {
               child: FlatButton(
                 color: Color(0xFFEB5222),
                 padding: EdgeInsets.symmetric(vertical: 18, horizontal: 40),
-                onPressed: () {
+                onPressed: () async {
                   print(emailInput.email);
                   print(passwordInput.password);
-                  print(userInput.username);
+                  try {
+                    final newUser = await _auth.createUserWithEmailAndPassword(
+                        email: emailInput.email,
+                        password: passwordInput.password);
+                    if(newUser != null){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ),
+                      );
+                    }
+                  } catch (e) {
+                    print('hii');
+                    print(e);
+                    print('hii');
+                  }
                 },
                 child: Text(
                   'Sign Up',

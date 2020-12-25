@@ -29,7 +29,7 @@ class Body extends StatelessWidget {
                 'Create an account and access our recipies \nand many more features.',
                 textAlign: TextAlign.center,
               ),
-              LoginForm(),
+              SignUpForm(),
               Container(
                 margin: EdgeInsets.symmetric(vertical: size.height * 0.02),
                 width: size.width * 0.8,
